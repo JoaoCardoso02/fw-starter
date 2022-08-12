@@ -1,6 +1,5 @@
-import { Axios } from 'axios';
-
 import type { IHttpClientParams } from '@infrastructure/providers/types/IHttpClient';
+import { Axios } from 'axios';
 
 export default class HttpClient extends Axios {
   constructor(data: IHttpClientParams) {

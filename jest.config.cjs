@@ -9,7 +9,7 @@ module.exports = {
     '^@application/(.*)$': '<rootDir>/application/$1',
     '^@domain/(.*)$': '<rootDir>/domain/$1',
     '^@infrastructure/(.*)$': '<rootDir>/infrastructure/$1',
-    '^@shared/(.*)$': '<rootDir>/shared/$1',
+    '^@handlers/(.*)$': '<rootDir>/handlers/$1',
     '^@src/(.*)$': '<rootDir>/$1',
   },
 };

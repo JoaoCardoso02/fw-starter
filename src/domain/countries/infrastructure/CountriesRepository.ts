@@ -11,7 +11,7 @@ export default class CountriesRepository implements ICountriesRepository {
 
   public async getCountries(): Promise<ICountriesDTO[]> {
     try {
-      const { data } = await this.client.get<string>('all?fields=idd,flags,name');
+      const { data } = await this.client.get<string>('all?fields=idd,flags,name,cca2');
 
       return JSON.parse(data);
     } catch (err) {

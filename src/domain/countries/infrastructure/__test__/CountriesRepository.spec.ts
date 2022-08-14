@@ -48,7 +48,7 @@ describe('CountriesRepository', () => {
 
       const result = await sut.getCountries();
 
-      expect(getSpy).toBeCalledWith('all?fields=idd,flags,name');
+      expect(getSpy).toBeCalledWith('all?fields=idd,flags,name,cca2');
       expect(result).toEqual([
         {
           name: 'Brazil 🇧🇷',

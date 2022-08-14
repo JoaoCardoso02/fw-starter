@@ -3,7 +3,7 @@ import type { ICountriesService } from '@domain/countries/types/ICountriesServic
 
 import type { BaseHandler } from './types/BaseHandler';
 
-export default class GetCountriesPhonePrefixHandler implements BaseHandler<Country[]> {
+export default class GetCountriesPhonePrefixHandler implements BaseHandler<null, Country[]> {
   private countryService: ICountriesService;
 
   constructor(countryService: ICountriesService) {

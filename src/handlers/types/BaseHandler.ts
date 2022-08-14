@@ -1,4 +1,4 @@
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface BaseHandler<T> {
-  execute(): Promise<T>;
+export interface BaseHandler<P, R> {
+  execute({ ...rest }: P): Promise<R>;
 }

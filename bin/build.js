@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import esbuild from 'esbuild';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const esbuild = require('esbuild');
 
 const buildDirectory = 'dist';
 const production = process.env.NODE_ENV === 'production';

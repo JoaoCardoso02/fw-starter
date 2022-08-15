@@ -1,6 +1,8 @@
 {
   "extends": "@finsweet/tsconfig",
   "compilerOptions": {
+		"module": "CommonJS",
+		"moduleResolution": "Node",
     "rootDir": ".",
     "baseUrl": "./",
     "paths": {

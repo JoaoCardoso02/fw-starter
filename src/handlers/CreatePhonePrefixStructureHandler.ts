@@ -40,6 +40,7 @@ export default class CreatePhonePrefixStructureHandler implements BaseHandler<Co
 
   private createParagraphItem(country: Country) {
     const paragraph = document.createElement('p');
+    paragraph.className = 'prefix-dropdown_text';
     paragraph.textContent = country.getCca2();
 
     return paragraph;

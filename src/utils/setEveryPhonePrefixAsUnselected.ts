@@ -3,5 +3,6 @@ export default function setEveryPhonePrefixAsUnselected() {
 
   dropdownItems.forEach((dropdownItem) => {
     dropdownItem.setAttribute('aria-selected', 'false');
+    dropdownItem.classList.remove('w--current');
   });
 }

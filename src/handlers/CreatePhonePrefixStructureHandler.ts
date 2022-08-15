@@ -5,7 +5,7 @@ import type { BaseHandler } from './types/BaseHandler';
 
 export default class CreatePhonePrefixStructureHandler implements BaseHandler<Country[], unknown> {
   async execute(countries: Country[]) {
-    const prefixDropdown = document.getElementById('prefix-dropdown_list');
+    const prefixDropdown = document.getElementById('prefix-dropdown-test_list');
 
     countries.forEach((country, index) => {
       const dropdownItem = this.createDropdownItem(country, index);

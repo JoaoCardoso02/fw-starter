@@ -4,6 +4,7 @@ export default function setPhonePrefixSelected(dropdownItem: Element) {
   setEveryPhonePrefixAsUnselected();
 
   dropdownItem.setAttribute('aria-selected', 'true');
+  dropdownItem.classList.add('w--current');
   const prefixFlagSelected = dropdownItem.getElementsByTagName('img')[0]?.getAttribute('src');
   const prefixCca2Selected = dropdownItem.getElementsByTagName('p')[0]?.innerText;
 

@@ -1,4 +1,5 @@
 import type Country from '@domain/countries/entities/Country';
+import setPhonePrefixSelected from '@utils/setPhonePrefixSelected';
 
 import type { BaseHandler } from './types/BaseHandler';
 
@@ -14,6 +15,10 @@ export default class CreatePhonePrefixStructureHandler implements BaseHandler<Co
       dropdownItem.appendChild(itemImg);
       dropdownItem.appendChild(paragraphImg);
       prefixDropdown?.appendChild(dropdownItem);
+
+      if (index === 0) {
+        setPhonePrefixSelected(dropdownItem);
+      }
     });
   }
 

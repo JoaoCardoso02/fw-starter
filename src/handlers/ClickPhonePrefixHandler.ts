@@ -1,5 +1,5 @@
 import setEveryPhonePrefixAsUnselected from '@utils/setEveryPhonePrefixAsUnselected';
-import setPhonePrefixSelectedWhenClicked from '@utils/setPhonePrefixSelected';
+import setPhonePrefixSelected from '@utils/setPhonePrefixSelected';
 
 import type { BaseHandler } from './types/BaseHandler';
 
@@ -10,7 +10,7 @@ export default class ClickPhonePrefixHandler implements BaseHandler<Event, void>
     dropdownItems.forEach((dropdownItem) => {
       dropdownItem.addEventListener('click', () => {
         setEveryPhonePrefixAsUnselected();
-        setPhonePrefixSelectedWhenClicked(dropdownItem);
+        setPhonePrefixSelected(dropdownItem);
       });
     });
   }

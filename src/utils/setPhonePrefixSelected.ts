@@ -1,6 +1,6 @@
 import setEveryPhonePrefixAsUnselected from './setEveryPhonePrefixAsUnselected';
 
-export default function setPhonePrefixSelectedWhenClicked(dropdownItem: Element) {
+export default function setPhonePrefixSelected(dropdownItem: Element) {
   setEveryPhonePrefixAsUnselected();
 
   dropdownItem.setAttribute('aria-selected', 'true');

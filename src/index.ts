@@ -1,4 +1,5 @@
 import ClickPhonePrefixHandler from '@handlers/ClickPhonePrefixHandler';
+import SearchByKeyboardHandler from '@handlers/SearchByKeyboardHandler';
 
 import CreatePhonePrefixStructureResolver from './resolvers/CreatePhonePrefixStructureResolver';
 import GetCountriesPhonePrefixResolver from './resolvers/GetCountriesPhonePrefixResolver';
@@ -10,5 +11,8 @@ window.Webflow.push(async () => {
   createPhonePrefixStructure.execute(countries);
 
   const clickPhonePrefixHandler = new ClickPhonePrefixHandler();
-  clickPhonePrefixHandler.execute();
+  clickPhonePrefixHandler.execute(countries);
+
+  const searchByKeyboardHandler = new SearchByKeyboardHandler();
+  searchByKeyboardHandler.execute(countries);
 });

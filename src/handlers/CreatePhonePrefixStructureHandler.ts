@@ -17,7 +17,7 @@ export default class CreatePhonePrefixStructureHandler implements BaseHandler<Co
       prefixDropdown?.appendChild(dropdownItem);
 
       if (index === 0) {
-        setPhonePrefixSelected(dropdownItem);
+        setPhonePrefixSelected(dropdownItem, countries);
       }
     });
   }

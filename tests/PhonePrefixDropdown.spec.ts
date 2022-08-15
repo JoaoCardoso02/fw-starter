@@ -53,4 +53,12 @@ test.describe('PhonePrefixDropdown', () => {
       expect(flags.includes(flag)).toBeTruthy();
     }
   });
+
+  test('should render all country prefixes', async ({ page }) => {
+    const items = await page
+      .locator('.prefix-dropdown-test_list .prefix-dropdown_item-2')
+      .elementHandles();
+
+    expect(items.length).toBe(countries.length);
+  });
 });

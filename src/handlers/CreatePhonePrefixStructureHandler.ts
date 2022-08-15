@@ -23,6 +23,7 @@ export default class CreatePhonePrefixStructureHandler implements BaseHandler<Co
     item.className = 'prefix-dropdown_item-2 w-inline-block';
     item.dataset.element = 'item';
     item.ariaRoleDescription = 'option';
+    item.ariaSelected = 'false';
     item.tabIndex = index;
     item.ariaLabel = country.getName();
     item.title = country.getName();

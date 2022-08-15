@@ -2,7 +2,7 @@ import type Country from '@domain/countries/entities/Country';
 
 import type { BaseHandler } from './types/BaseHandler';
 
-export default class CreatePhonePrefixStructure implements BaseHandler<Country[], unknown> {
+export default class CreatePhonePrefixStructureHandler implements BaseHandler<Country[], unknown> {
   async execute(countries: Country[]) {
     const prefixDropdown = document.getElementById('prefix-dropdown_list');
 

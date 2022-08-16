@@ -6,9 +6,12 @@ import type { BaseHandler } from './types/BaseHandler';
 export default class CreatePhonePrefixStructureHandler implements BaseHandler<Country[], unknown> {
   async execute(countries: Country[]) {
     const prefixDropdown = document.getElementById('prefix-dropdown-test_list');
+    if (!prefixDropdown) return;
+
+    prefixDropdown.tabIndex = 0;
 
     countries.forEach((country, index) => {
-      const dropdownItem = this.createDropdownItem(country, index);
+      const dropdownItem = this.createDropdownItem(country);
       const itemImg = this.createImageItem(country);
       const paragraphImg = this.createParagraphItem(country);
 
@@ -22,14 +25,15 @@ export default class CreatePhonePrefixStructureHandler implements BaseHandler<Co
     });
   }
 
-  private createDropdownItem(country: Country, index: number) {
+  private createDropdownItem(country: Country) {
     const item = document.createElement('a');
+
     item.href = '#';
     item.className = 'prefix-dropdown_item-2 w-inline-block';
     item.dataset.element = 'item';
     item.ariaRoleDescription = 'option';
     item.ariaSelected = 'false';
-    item.tabIndex = index;
+    item.tabIndex = 0;
     item.ariaLabel = country.getName();
     item.title = country.getName();
 

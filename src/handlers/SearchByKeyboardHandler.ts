@@ -7,7 +7,7 @@ export default class SearchByKeyboardHandler implements BaseHandler<Country[], v
   private text = '';
 
   async execute(countries: Country[]) {
-    const dropdown = document.getElementById('w-dropdown-toggle-1');
+    const dropdown = document.getElementById('prefix-dropdown_toggle-2');
     const countriesName = countries.map((country) => country.getName());
 
     dropdown?.addEventListener('keypress', (event) => {

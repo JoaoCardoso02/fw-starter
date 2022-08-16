@@ -7,6 +7,7 @@ export default function setPhonePrefixSelected(dropdownItem: Element, countries:
 
   dropdownItem.setAttribute('aria-selected', 'true');
   dropdownItem.classList.add('w--current');
+  (dropdownItem as HTMLElement).focus();
 
   const title = dropdownItem.getAttribute('title');
 
@@ -14,8 +15,8 @@ export default function setPhonePrefixSelected(dropdownItem: Element, countries:
 
   if (!country) return;
 
-  const toggleFlag = document.querySelector('#w-dropdown-toggle-1 img');
-  const toggleCca2 = document.querySelector('#w-dropdown-toggle-1 div');
+  const toggleFlag = document.querySelector('#prefix-dropdown_toggle-2 img');
+  const toggleCca2 = document.querySelector('#prefix-dropdown_toggle-2 div');
 
   toggleFlag?.setAttribute('src', country.getFlag());
 

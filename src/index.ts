@@ -17,5 +17,6 @@ window.Webflow.push(async () => {
   const searchByKeyboardHandler = new SearchByKeyboardHandler();
   searchByKeyboardHandler.execute(countries);
 
-  new NavigateByKeys().execute(countries);
+  const navigateByKeys = new NavigateByKeys();
+  navigateByKeys.execute(countries);
 });

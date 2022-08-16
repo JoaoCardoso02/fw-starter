@@ -1,5 +1,5 @@
 import type Country from '@domain/countries/entities/Country';
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 
 import GetCountriesPhonePrefixResolver from '../src/resolvers/GetCountriesPhonePrefixResolver';
 
@@ -8,11 +8,11 @@ let countries: Country[];
 test.beforeEach(async ({ page }) => {
   await page.goto('https://phone-prefix-challenge-by-joao.webflow.io/');
   countries = await GetCountriesPhonePrefixResolver().execute();
-  await page.waitForSelector('.prefix-dropdown-test_list .prefix-dropdown_item-2');
 });
 
 test.describe('PhonePrefixDropdown', () => {
   test('should render country titles in dropdown item', async ({ page }) => {
+    await openDropdownAndWaitForItems(page);
     const items = await page
       .locator('.prefix-dropdown-test_list .prefix-dropdown_item-2')
       .elementHandles();
@@ -27,6 +27,7 @@ test.describe('PhonePrefixDropdown', () => {
   });
 
   test('should render country cca2 in dropdown item', async ({ page }) => {
+    await openDropdownAndWaitForItems(page);
     const items = await page
       .locator('.prefix-dropdown-test_list .prefix-dropdown_text')
       .elementHandles();
@@ -41,6 +42,7 @@ test.describe('PhonePrefixDropdown', () => {
   });
 
   test('should render country flags in dropdown item', async ({ page }) => {
+    await openDropdownAndWaitForItems(page);
     const items = await page
       .locator('.prefix-dropdown-test_list .prefix-dropdown_flag')
       .elementHandles();
@@ -55,6 +57,7 @@ test.describe('PhonePrefixDropdown', () => {
   });
 
   test('should render all country prefixes', async ({ page }) => {
+    await openDropdownAndWaitForItems(page);
     const items = await page
       .locator('.prefix-dropdown-test_list .prefix-dropdown_item-2')
       .elementHandles();
@@ -62,3 +65,8 @@ test.describe('PhonePrefixDropdown', () => {
     expect(items.length).toBe(countries.length);
   });
 });
+
+const openDropdownAndWaitForItems = async (page: Page) => {
+  await page.locator('#prefix-dropdown_toggle-2').click();
+  await page.waitForSelector('.prefix-dropdown-test_list .prefix-dropdown_item-2');
+};

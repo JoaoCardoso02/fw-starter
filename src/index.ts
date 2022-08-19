@@ -5,6 +5,12 @@ import SearchByKeyboardHandler from '@handlers/SearchByKeyboardHandler';
 import CreatePhonePrefixStructureResolver from './resolvers/CreatePhonePrefixStructureResolver';
 import GetCountriesPhonePrefixResolver from './resolvers/GetCountriesPhonePrefixResolver';
 
+declare global {
+  interface Window {
+    Webflow: Array<unknown>;
+  }
+}
+
 window.Webflow ||= [];
 window.Webflow.push(async () => {
   const countries = await GetCountriesPhonePrefixResolver().execute();

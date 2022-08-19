@@ -1,10 +1,15 @@
 {
   "extends": "@finsweet/tsconfig",
   "compilerOptions": {
+		"module": "CommonJS",
+		"moduleResolution": "Node",
     "rootDir": ".",
     "baseUrl": "./",
     "paths": {
-      "$utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@domain/*": ["src/domain/*"],
+      "@handlers/*": ["src/handlers/*"]
     }
   }
 }

@@ -116,7 +116,7 @@ import example from '../../../../utils/example';
 Instead, we can create path aliases that map to a specific folder, so the code becomes cleaner like:
 
 ```typescript
-import example from '$utils/example';
+import example from '@utils/example';
 ```
 
 You can set up path aliases using the `paths` setting in `tsconfig.json`. This template has an already predefined path as an example:
